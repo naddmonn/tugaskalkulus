@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Kalkulator Turunan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.1/math.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h2><img src="https://github.com/harismuda/persamaan-kuadrat/blob/main/img/undira.png?raw=true" width="50px">
+      Universitas Dian Nusantara</h2>
+    <div class="boxes">
+      <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalDataDiri">
+        <div class="box">
+          <label>
+            <i class="fa-solid fa-2"></i>
+            <p>Data Diri</p>
+          </label>
+        </div>
+      </button>
+      <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalPenjelasan">
+        <div class="box">
+          <label for="scheme">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <p>Penjelasan</p>
+          </label>
+        </div>
+      </button>
+      <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalKalkulator">
+        <div class="box">
+          <label>
+            <i class="fa-solid fa-clipboard-list"></i>
+            <p>Kalkulator</p>
+          </label>
+        </div>
+      </button>
+      <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalKontak">
+        <div class="box">
+          <label>
+            <i class="fa-solid fa-pen-fancy"></i>
+            <p>Kontak</p>
+          </label>
+        </div>  
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal Data Diri -->
+  <div class="modal fade" id="modalDataDiri" tabindex="-1" aria-labelledby="modalDataDiriLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalDataDiriLabel">Data Diri</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tr>
+              <th>Nama</th>
+              <td> : Nadia Monica</td>
+            </tr>
+            <tr>
+              <th>NIM</th>
+              <td> : 411231107</td>
+            </tr>
+            <tr>
+              <th>Prodi</th>
+              <td> : Teknik Informatika</td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal Data Diri -->
+
+  <!-- Modal Penjelasan -->
+<div class="modal fade" id="modalPenjelasan" tabindex="-1" aria-labelledby="modalPenjelasanLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalPenjelasanLabel">Penjelasan Turunan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="txt">
+          Definisi turunan adalah perubahan nilai fungsi pada waktu titik yang sangat kecil (laju perubahan nilai/nilai sesaat).
+        </p>
+        <p class="txt">
+          Contoh:
+          <br>
+          f(x) = 5x^10 – 3x^8 + 4x^2 – 5
+          <br>
+          f'(x) = 50x^9 – 24x^7 + 8x
+        </p>
+        <p class="txt">
+          Beberapa materi fisika yang menggunakan turunan diantaranya GLBB (kecepatan / percepatan sesaat), relativitas, induksi elektromagnetik, dan lain–lain.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- End Modal Penjelasan -->
+
+  <!-- Modal Kalkulator -->
+  <div class="modal fade" id="modalKalkulator" tabindex="-1" aria-labelledby="modalKalkulatorLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalKalkulatorLabel">Kalkulator</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label>Masukkan Fungsi f(x) : </label> 
+          <input type="text" id="inputFunction" class="form-control" placeholder="Contoh : 4x^3 + 2x^2 - 3x + 1">
+          <div class="mt-2">
+            <button onclick="hitungTurunan()" class="btn btn-success">Cari</button>
+          </div>
+          <hr>
+          <h5>Hasil Turunan : <span id="result"></span></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal Kalkulator -->
+
+  <!-- Modal Kontak -->
+  <div class="modal fade" id="modalKontak" tabindex="-1" aria-labelledby="modalKontakLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalKontakLabel">Kontak</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <tr>
+              <th>WhatsApp</th>
+              <td><a href="https://wa.me/6285693375810" class="btn btn-success" target="_blank">Klik</a></td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td><a href="mailto:411231107@mahasiswa.undira.ac.id" class="btn btn-primary">Klik</a></td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal Kontak -->
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+</html>
